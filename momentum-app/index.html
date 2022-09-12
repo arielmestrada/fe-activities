@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="assets/styles/styles.css" />
+    <script src="assets/scripts/app.js" defer></script>
+    <title>Momentum App</title>
+  </head>
+  <body>
+    <header>
+      <div class="links-html">
+        <h2 class="link-toggle">Links</h2>
+        <div class="link-container" data-link-visible="false">
+          <form action="" class="add-link-form" autocomplete="off">
+            <input
+              class="new"
+              type="text"
+              id="new-link-name-input"
+              placeholder="website name"
+            />
+            <input
+              class="new"
+              type="text"
+              id="new-link-url-input"
+              placeholder="website url"
+            />
+          </form>
+          <ul class="links">
+            <!-- <li class="link">
+              <a class="link-url" href="https://www.google.com/" target="_blank"
+                >Google</a
+              >
+            </li>
+            <li class="link">Facebook</li>
+            <li class="link">Instagram</li> -->
+          </ul>
+          <button class="btn" data-delete-links>Clear all links</button>
+        </div>
+      </div>
+      <div class="header-right">
+        <div class="countdown">
+          <h2>4d</h2>
+          <p>Project Deadline</p>
+        </div>
+        <div class="weather">
+          <h2><span class="weather-symbol">🌣</span> 24°</h2>
+          <p>Quezon City, PH</p>
+        </div>
+      </div>
+    </header>
+
+    <main>
+      <div class="hero-name">
+        <!--<h2>Goodmorning, Ariel</h2>
+        <h2>Please enter your name...</h2>-->
+        <form for="" autocomplete="off" data-hero-name-form>
+          <label for="name-input">Welcome</label>
+          <input
+            id="name-input"
+            type="name"
+            placeholder="Please enter your name..."
+          />
+        </form>
+      </div>
+
+      <div class="datetime">
+        <div class="date">
+          <span id="dayname">Day</span>,
+          <span id="month">Month</span>
+          <span id="daynum">00</span>,
+          <span id="year">Year</span>
+        </div>
+        <div class="time">
+          <span id="hour">00</span>
+          <span class="colon">:</span>
+          <span id="minutes">00</span>
+          <span class="colon">:</span>
+          <span id="seconds">00</span>
+          <span id="period">AM</span>
+        </div>
+      </div>
+
+      <div class="main-focus">
+        <form class="focus-form" autocomplete="off">
+          <label class="focus-label" for="focus-input"
+            >What is your main focus today?</label
+          >
+          <input id="focus-input" placeholder="Enter here..." />
+        </form>
+        <button class="btn focus-remove-button">remove</button>
+        <!-- <h2>What is your main focus today?</h2>
+        <p>To learn how to effectively use JavaScript</p> -->
+      </div>
+      <div class="random-quotes">
+        <ul class="quotes">
+          <!-- <li class="quote">Lorem ipsum dolor sit amet.</li>
+          <li class="quote">Lorem ipsum dolor.</li>
+          <li class="quote">Lorem.</li> -->
+        </ul>
+        <div class="add-or-remove-quote">
+          <form action="" class="add-quote-form">
+            <input
+              type="text"
+              class="new"
+              placeholder="add quote"
+              data-add-quote-input
+            />
+          </form>
+          <!-- <button class="btn remove-quote">remove current quote</button> -->
+        </div>
+      </div>
+    </main>
+
+    <footer>
+      <div class="picture-credit">
+        <!-- <h2>Emerald Beach, Zambales, Philippines</h2> -->
+      </div>
+
+      <p>
+        © 2022. Company Name. All Rights Reserved. Designed, developed &
+        maintained by El (*for educational purpose only*)
+      </p>
+
+      <div class="todo">
+        <h2 class="todo-toggle">Todo</h2>
+
+        <!-- todo list body -->
+
+        <div class="todo-container" data-visible="false">
+          <div class="todo-list-body">
+            <form action="" data-dropdown-form>
+              <select name="todo-lists" class="todo-lists" data-lists>
+                <!-- <option>Today</option>
+                <option>Tomorrow</option>
+                <option>Weekly</option> -->
+              </select>
+            </form>
+
+            <div class="new-list-creator">
+              <form action="" data-new-list-form>
+                <input
+                  type="text"
+                  class="new"
+                  data-new-list-input
+                  placeholder="new list name"
+                />
+                <button class="btn create">+</button>
+              </form>
+            </div>
+          </div>
+
+          <!-- todo task body -->
+
+          <div class="todo-task-body" data-list-display-container>
+            <div class="todo-tasks" data-tasks>
+              <!-- <div class="task">
+                <input type="checkbox" id="task-1" />
+                <label for="task-1">
+                  <span class="custom-checkbox"></span>Buy groceries
+                </label>
+              </div>
+              <div class="task">
+                <input type="checkbox" id="task-2" />
+                <label for="task-2">
+                  <span class="custom-checkbox"></span>Do laundry
+                </label>
+              </div>
+              <div class="task">
+                <input type="checkbox" id="task-3" />
+                <label for="task-3">
+                  <span class="custom-checkbox"></span>Continue coding
+                </label>
+              </div> -->
+            </div>
+
+            <div class="new-task-creator">
+              <form action="" data-new-task-form>
+                <input
+                  type="text"
+                  data-new-task-input
+                  class="new"
+                  placeholder="new task name"
+                />
+                <button class="btn create">+</button>
+              </form>
+            </div>
+
+            <div class="todo-deletes">
+              <button
+                class="btn delete-checked-tasks"
+                data-clear-complete-tasks
+              >
+                Clear completed tasks
+              </button>
+              <button class="btn delete-list" data-delete-list-button>
+                Delete list
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <template id="task-template">
+      <div class="task">
+        <input type="checkbox" />
+        <label>
+          <span class="custom-checkbox"></span>
+        </label>
+      </div>
+    </template>
+  </body>
+</html>

@@ -1,0 +1,828 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap");
+
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+  font-family: "Roboto";
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  background-color: hsl(203, 98%, 52%, 0.1);
+  padding: 1rem;
+}
+
+/* _Header */
+
+header {
+  max-width: 100px;
+  display: none;
+}
+
+.company {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: center;
+}
+
+.company-logo {
+  max-width: 100px;
+}
+
+.company-name {
+  margin-top: 1rem;
+  font-size: 1rem;
+  font-weight: 800;
+  color: hsl(184, 100%, 97%);
+  text-shadow: 3px 3px 2px hsl(186, 100%, 15%);
+}
+
+/* #initial-accounts {
+  display: none;
+} */
+
+/* _Main */
+
+.main {
+  display: none;
+  /* display: flex; */
+  height: 85vh;
+  gap: 1rem;
+}
+
+/* _Left Menu */
+
+/* .left {
+  list-style: none;
+  height: 100%;
+  min-width: 200px;
+} */
+
+.menu {
+  list-style: none;
+  background-color: hsl(202, 58%, 52%);
+  border-radius: 10px;
+  height: 100%;
+  width: 10vw;
+  min-width: 200px;
+}
+
+.menu li {
+  margin: 1rem;
+}
+
+.btn {
+  color: hsl(187, 100%, 98%);
+  background-color: transparent;
+  padding: 1rem;
+  cursor: pointer;
+  width: 100%;
+  font-size: 1rem;
+  font-weight: 700;
+  border-radius: 10px;
+  border: 1px solid hsl(186, 100%, 45%, 0.5);
+}
+
+.btn:hover {
+  background-color: hsl(186, 100%, 45%, 0.5);
+  text-shadow: 3px 3px 2px hsl(186, 100%, 15%);
+}
+
+.btn:active {
+  text-shadow: 0px 0px 5px hsl(186, 100%, 15%);
+}
+
+/* _Right */
+
+.right-container {
+  display: flex;
+  flex-direction: column;
+  /* max-height: 1000px; */
+  /* border: 1px solid red; */
+  overflow-y: scroll;
+}
+
+.right {
+  display: none;
+}
+
+/* _Account List */
+
+.accounts {
+  border: 1px solid hsl(202, 98%, 52%, 0.2);
+  padding: 1rem;
+  border-radius: 10px;
+  box-shadow: 0px 0px 10px 1px hsl(202, 98%, 52%, 0.2);
+}
+
+#filter-input {
+  border-radius: 8px;
+  border: 1px solid hsl(202, 98%, 52%, 0.2);
+  width: 50%;
+  height: 30px;
+  margin: 1rem 0;
+  box-shadow: 1px 1px 1px 1px hsl(202, 98%, 52%, 0.2);
+}
+
+.account-list-container {
+  overflow: scroll;
+  width: 100%;
+  max-height: 450px;
+}
+
+.account-list-table {
+  background-color: hsl(202, 98%, 52%, 0.2);
+}
+
+#account-list-tbody tr:nth-child(even) {
+  background-color: hsl(202, 78%, 72%);
+}
+
+#account-list-tbody tr:nth-child(odd) {
+  background-color: hsl(202, 78%, 82%);
+}
+
+.account-list-table th {
+  width: 1000px;
+}
+
+.account-list-table thead tr {
+  position: sticky;
+  top: 0;
+  background-color: hsl(202, 58%, 52%);
+}
+
+.account-list-table tr > * {
+  border: 0;
+  padding: 1rem;
+  white-space: nowrap;
+}
+
+#account-list-tbody tr:hover {
+  background-color: hsl(202, 58%, 42%);
+}
+
+#account-list-tbody td {
+  text-align: right;
+}
+
+.td-actions {
+  display: flex;
+  justify-content: space-around;
+}
+
+.delete-row-button,
+.access-button {
+  border: 0;
+  background-color: transparent;
+  cursor: pointer;
+}
+
+/* _Create Form */
+
+.create-account {
+  width: 100%;
+  padding: 1rem;
+  margin-bottom: 1rem;
+  border-radius: 10px;
+  background-color: rgb(62, 152, 204);
+  color: hsl(184, 100%, 97%);
+  text-shadow: 3px 3px 2px hsl(186, 100%, 15%);
+}
+
+.create-account h2 {
+  font-size: 2rem;
+  font-weight: 900;
+  margin: 1rem;
+}
+
+#create-account-form {
+  display: grid;
+  grid-template-columns: 1fr 5fr 1fr 5fr;
+  row-gap: 1rem;
+  align-items: center;
+  column-gap: 0;
+}
+
+#create-account-submit {
+  grid-column: 1 / 5;
+  justify-self: center;
+}
+
+hr {
+  height: 1px;
+  grid-column: 1 / 5;
+  width: 80%;
+  margin: 1rem auto;
+  border: 1px solid hsl(186, 46%, 66%);
+  border-radius: 1px;
+}
+
+#create-account-form > label {
+  margin: 0.5rem;
+}
+
+#create-account-form > input {
+  margin: 0.5rem;
+  border: 0;
+  max-width: 500px;
+  border-radius: 10px;
+  box-shadow: 1px 1px 1px 1px hsl(186, 100%, 15%);
+  font-family: "Roboto";
+  padding: 0.5rem;
+}
+
+.form-btn {
+  color: hsl(187, 100%, 98%);
+  background-color: transparent;
+  padding: 1rem;
+  cursor: pointer;
+  width: 100%;
+  font-size: 1rem;
+  font-weight: 700;
+  border-radius: 10px;
+  border: 1px solid hsl(186, 100%, 45%, 0.5);
+}
+
+.form-btn:hover {
+  background-color: hsl(186, 100%, 45%, 0.5);
+  text-shadow: 3px 3px 2px hsl(186, 100%, 15%);
+}
+
+.form-btn:active {
+  text-shadow: 0px 0px 5px hsl(186, 100%, 15%);
+}
+
+/* Deposit Form */
+
+.deposit-section {
+  width: 100%;
+  padding: 1rem;
+  margin-bottom: 1rem;
+  border-radius: 10px;
+  background-color: rgb(62, 152, 204);
+  color: hsl(184, 100%, 97%);
+  text-shadow: 3px 3px 2px hsl(186, 100%, 15%);
+}
+
+.deposit-section h2 {
+  font-size: 2rem;
+  font-weight: 900;
+  margin: 1rem;
+}
+
+#deposit-form {
+  display: grid;
+  grid-template-columns: 1fr 5fr 1fr 5fr;
+  row-gap: 1rem;
+  align-items: center;
+  column-gap: 0;
+}
+
+#deposit-form .submit-button {
+  grid-column: 1 / 5;
+  justify-self: center;
+}
+
+#deposit-form > label {
+  margin: 0.5rem;
+}
+
+#deposit-form > input {
+  margin: 0.5rem;
+  border: 0;
+  max-width: 500px;
+  border-radius: 10px;
+  box-shadow: 1px 1px 1px 1px hsl(186, 100%, 15%);
+  font-family: "Roboto";
+  padding: 0.5rem;
+}
+
+/* Withdraw Form */
+
+.withdraw-section {
+  width: 100%;
+  padding: 1rem;
+  margin-bottom: 1rem;
+  border-radius: 10px;
+  background-color: rgb(62, 152, 204);
+  color: hsl(184, 100%, 97%);
+  text-shadow: 3px 3px 2px hsl(186, 100%, 15%);
+}
+
+.withdraw-section h2 {
+  font-size: 2rem;
+  font-weight: 900;
+  margin: 1rem;
+}
+
+#withdraw-form {
+  display: grid;
+  grid-template-columns: 1fr 5fr 1fr 5fr;
+  row-gap: 1rem;
+  align-items: center;
+  column-gap: 0;
+}
+
+#withdraw-form .submit-button {
+  grid-column: 1 / 5;
+  justify-self: center;
+}
+
+#withdraw-form > label {
+  margin: 0.5rem;
+  white-space: nowrap;
+}
+
+#withdraw-form > input {
+  margin: 0.5rem;
+  border: 0;
+  max-width: 500px;
+  border-radius: 10px;
+  box-shadow: 1px 1px 1px 1px hsl(186, 100%, 15%);
+  font-family: "Roboto";
+  padding: 0.5rem;
+}
+
+/* Transfer Form */
+
+.transfer-section {
+  width: 100%;
+  padding: 1rem;
+  margin-bottom: 1rem;
+  border-radius: 10px;
+  background-color: rgb(62, 152, 204);
+  color: hsl(184, 100%, 97%);
+  text-shadow: 3px 3px 2px hsl(186, 100%, 15%);
+}
+
+.transfer-section h2 {
+  grid-column: 1 / 4;
+  font-size: 2rem;
+  font-weight: 900;
+  margin: 1rem;
+}
+
+#transfer-form {
+  display: grid;
+  grid-template-columns: 5fr 1fr 5fr;
+  row-gap: 1rem;
+  column-gap: 0;
+  justify-items: center;
+}
+
+.sender-div {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  row-gap: 1rem;
+  column-gap: 0;
+  justify-items: end;
+}
+
+.sender-div h3 {
+  grid-column: 1 / 3;
+  justify-self: start;
+}
+
+.sender-div hr {
+  grid-column: 2 / 3;
+  align-self: center;
+  justify-self: center;
+}
+
+.receiver-div {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  row-gap: 1rem;
+  column-gap: 0;
+  justify-items: end;
+}
+
+.receiver-div h3 {
+  grid-column: 1 / 3;
+  justify-self: start;
+}
+
+.receiver-div hr {
+  grid-column: 1 / 2;
+}
+
+#transfer-form .submit-button {
+  grid-column: 2 / 3;
+}
+
+#transfer-form div > label {
+  margin: 0.5rem;
+  white-space: nowrap;
+}
+
+#transfer-form div > input {
+  margin: 0.5rem;
+  border: 0;
+  max-width: 500px;
+  border-radius: 10px;
+  box-shadow: 1px 1px 1px 1px hsl(186, 100%, 15%);
+  font-family: "Roboto";
+  padding: 0.5rem;
+}
+
+#transfer-form input {
+  margin: 0.5rem;
+  border: 0;
+  max-width: 500px;
+  border-radius: 10px;
+  box-shadow: 1px 1px 1px 1px hsl(186, 100%, 15%);
+  font-family: "Roboto";
+  padding: 0.5rem;
+}
+
+.transfer-hr {
+  width: 0;
+  height: 200px;
+  grid-column: 2 / 3;
+}
+
+/* _Full Account Details */
+
+.full-account-details {
+  padding: 0.5rem;
+  margin-bottom: 0.5rem;
+  color: hsl(184, 100%, 97%);
+  text-shadow: 3px 3px 2px hsl(186, 100%, 15%);
+  background-color: rgb(62, 152, 204);
+  border-radius: 10px;
+}
+
+.basic-details > div {
+  margin: 0.5rem;
+}
+
+.basic-details div > * {
+  margin: 0.5rem;
+}
+
+.basic-details {
+  padding: 1rem;
+  margin: 0.5rem;
+  display: grid;
+  grid-template-columns: 1fr 1.5fr;
+  grid-template-rows: repeat(6, 1fr);
+  font-size: 1rem;
+  align-items: center;
+  box-shadow: 1px 1px 2px 1px hsl(186, 100%, 15%);
+  border-radius: 10px;
+  align-items: stretch;
+}
+
+.account-number p,
+.balance p,
+.complete-name p {
+  font-size: 4rem;
+  font-weight: 700;
+}
+
+.last-name p,
+.first-name p,
+.middle-name p,
+.suffix p,
+.email-address p,
+.password p {
+  font-size: 2rem;
+  letter-spacing: 5px;
+}
+
+.account-number {
+  grid-column: 2 / 3;
+  grid-row: 1 / 3;
+  box-shadow: 1px 1px 2px 1px hsl(186, 100%, 15%);
+  border-radius: 10px;
+}
+
+.balance {
+  grid-column: 2 / 3;
+  grid-row: 3 / 5;
+  box-shadow: 1px 1px 2px 1px hsl(186, 100%, 15%);
+  border-radius: 10px;
+}
+
+.complete-name {
+  grid-column: 2 / 3;
+  grid-row: 5 / 7;
+  box-shadow: 1px 1px 2px 1px hsl(186, 100%, 15%);
+  border-radius: 10px;
+}
+
+.last-name {
+  grid-column: 1 / 2;
+  grid-row: 1 / 2;
+  box-shadow: 1px 1px 2px 1px hsl(186, 100%, 15%);
+  border-radius: 10px;
+}
+
+.first-name {
+  grid-column: 1 / 2;
+  grid-row: 2 / 3;
+  box-shadow: 1px 1px 2px 1px hsl(186, 100%, 15%);
+  border-radius: 10px;
+}
+
+.middle-name {
+  grid-column: 1 / 2;
+  grid-row: 3 / 4;
+  box-shadow: 1px 1px 2px 1px hsl(186, 100%, 15%);
+  border-radius: 10px;
+}
+
+.suffix {
+  grid-column: 1 / 2;
+  grid-row: 4 / 5;
+  box-shadow: 1px 1px 2px 1px hsl(186, 100%, 15%);
+  border-radius: 10px;
+}
+
+.email-address {
+  grid-column: 1 / 2;
+  grid-row: 5 / 6;
+  box-shadow: 1px 1px 2px 1px hsl(186, 100%, 15%);
+  border-radius: 10px;
+}
+
+.password {
+  grid-column: 1 / 2;
+  grid-row: 6 / 7;
+  box-shadow: 1px 1px 2px 1px hsl(186, 100%, 15%);
+  border-radius: 10px;
+}
+
+/* _Quick Transaction */
+
+.quick-transaction {
+  padding: 1rem;
+  margin: 0.5rem;
+  box-shadow: 1px 1px 1px 1px hsl(186, 100%, 15%);
+  border-radius: 10px;
+  display: grid;
+  grid-template-columns: 200px 1fr 1fr 200px;
+  grid-template-rows: repeat(3, 1fr);
+  justify-items: center;
+  align-items: center;
+  row-gap: 0.5rem;
+}
+
+.qt-deposit-button {
+  grid-column: 2 / 3;
+  grid-row: 1 / 2;
+}
+
+.qt-withdraw-button {
+  grid-column: 2 / 3;
+  grid-row: 2 / 3;
+}
+
+.qt-transfer-button {
+  grid-column: 2 / 3;
+  grid-row: 3 / 4;
+}
+
+.qt-inputs {
+  grid-column: 3 / 4;
+  grid-row: 1 / 4;
+  display: flex;
+  flex-direction: column;
+}
+
+.qt-inputs > input {
+  margin: 0.5rem;
+  border: 0;
+  max-width: 500px;
+  border-radius: 10px;
+  box-shadow: 1px 1px 1px 1px hsl(186, 100%, 15%);
+  font-family: "Roboto";
+  padding: 0.5rem;
+}
+
+/* _Budget App */
+
+.budget-app {
+  margin: 0.5rem;
+  box-shadow: 1px 1px 1px 1px hsl(186, 100%, 15%);
+  overflow: scroll;
+  width: 100%;
+  max-height: 450px;
+}
+
+.table-account-history thead tr {
+  position: sticky;
+  top: 0;
+  background-color: hsl(202, 58%, 42%);
+}
+
+.table-account-history tbody tr:nth-child(even) {
+  background-color: hsl(202, 78%, 32%);
+}
+
+.table-account-history tbody tr:nth-child(odd) {
+  background-color: hsl(202, 78%, 22%);
+}
+
+.table-account-history th {
+  width: 1000px;
+}
+
+.table-account-history tr > * {
+  border: 0;
+  padding: 1rem;
+  white-space: nowrap;
+}
+
+.delete-expense-button {
+  height: 30px;
+  font-size: 0.8rem;
+  padding: 0.4rem;
+}
+
+#submit-expense-element {
+  height: 30px;
+  font-size: 0.8rem;
+  padding: 0.4rem;
+}
+
+/* _Login */
+
+.login-div {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  background-color: rgb(62, 152, 204);
+  color: hsl(184, 100%, 97%);
+  text-shadow: 3px 3px 2px hsl(186, 100%, 15%);
+  width: 500px;
+  height: 400px;
+  margin: 1rem auto;
+  border-radius: 20px;
+  gap: 1rem;
+  margin-top: 6rem;
+}
+
+.login-form {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.signup-button {
+  border: 0;
+  background-color: transparent;
+  cursor: pointer;
+  font-size: 0.9rem;
+  font-weight: 500;
+  color: blue;
+}
+
+.login-form > label {
+  margin: 0.5rem;
+}
+
+.login-form > input {
+  margin: 0.5rem;
+  border: 0;
+  max-width: 500px;
+  border-radius: 10px;
+  box-shadow: 1px 1px 1px 1px hsl(186, 100%, 15%);
+  font-family: "Roboto";
+  padding: 0.5rem;
+}
+
+#initial-accounts {
+  height: 30px;
+  font-size: 0.8rem;
+  padding: 0.4rem;
+  width: 200px;
+}
+
+@media (max-width: 1400px) {
+  .btn {
+    font-size: clamp(0.2rem, 0.5rem + 0.5vw, 1rem);
+    padding: 0.5rem;
+    white-space: nowrap;
+  }
+
+  .main {
+    /* display: flex; */
+    flex-direction: column;
+  }
+
+  .menu {
+    height: 150px;
+    display: flex;
+    width: 100%;
+    overflow-x: scroll;
+  }
+
+  .form-btn {
+    font-size: clamp(0.2rem, 0.5rem + 0.5vw, 1rem);
+    padding: 0.5rem;
+  }
+
+  .create-account h2 {
+    font-size: clamp(0.75rem, 0.75rem + 0.75vw, 2rem);
+  }
+
+  .create-account {
+    font-size: clamp(0.5rem, 0.5rem + 0.5vw, 1rem);
+  }
+
+  #create-account-form > input {
+    min-width: 80px;
+  }
+
+  .deposit-section h2 {
+    font-size: clamp(0.75rem, 0.75rem + 0.75vw, 2rem);
+  }
+
+  .deposit-section {
+    font-size: clamp(0.5rem, 0.5rem + 0.5vw, 1rem);
+  }
+
+  #deposit-form > input {
+    min-width: 80px;
+  }
+
+  .withdraw-section h2 {
+    font-size: clamp(0.75rem, 0.75rem + 0.75vw, 2rem);
+  }
+
+  .withdraw-section {
+    font-size: clamp(0.5rem, 0.5rem + 0.5vw, 1rem);
+  }
+
+  #withdraw-form > label {
+    all: unset;
+    margin: 0.5rem;
+  }
+
+  #withdraw-form > input {
+    min-width: 80px;
+  }
+
+  .transfer-section h2 {
+    font-size: clamp(0.75rem, 0.75rem + 0.75vw, 2rem);
+  }
+
+  .transfer-section {
+    font-size: clamp(0.5rem, 0.5rem + 0.5vw, 1rem);
+    min-width: 400px;
+    min-height: 400px;
+    overflow-x: scroll;
+  }
+
+  #transfer-form > input {
+    min-width: 80px;
+  }
+
+  .basic-details {
+    overflow-x: scroll;
+  }
+
+  .basic-details > div > h3 {
+    font-size: clamp(0.5rem, 0.5rem + 0.5vw, 1rem);
+  }
+
+  .basic-details > div > p {
+    font-size: clamp(0.75rem, 0.75rem + 0.75vw, 2rem);
+  }
+
+  .qt-deposit-button {
+    grid-column: 1 / 2;
+  }
+
+  .qt-withdraw-button {
+    grid-column: 1 / 2;
+  }
+
+  .qt-transfer-button {
+    grid-column: 1 / 2;
+  }
+
+  .qt-inputs {
+    grid-column: 2 / 3;
+  }
+
+  .qt-inputs > label {
+    font-size: clamp(0.5rem, 0.5rem + 0.5vw, 1rem);
+  }
+
+  .qt-inputs > input {
+    min-width: 80px;
+  }
+
+  .quick-transaction {
+    overflow-x: scroll;
+  }
+}

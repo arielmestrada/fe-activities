@@ -1,0 +1,721 @@
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+  color: #fff;
+  font-family: "Roboto";
+  font-weight: 300;
+  /* border: 1px solid red; */
+}
+
+*::placeholder {
+  text-shadow: 3px 3px 3px black;
+  font-weight: 400;
+}
+
+.sr-only {
+  display: none;
+}
+
+body {
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  height: 100vh;
+  font-size: clamp(1rem, 1vw, 1.5rem);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+#morning {
+  background-image: url(../images/morning-bg-01-smaller.jpg);
+  text-shadow: 2px 2px 2px black;
+}
+
+#afternoon {
+  background-image: url(../images/afternoon-bg-02.jpg);
+  text-shadow: 2px 2px 4px black;
+}
+
+#night {
+  background-image: url(../images/night-bg-02.jpg);
+  text-shadow: 2px 2px 15px black;
+}
+
+header {
+  display: flex;
+  justify-content: space-between;
+  opacity: 0;
+  transition: opacity 500ms ease;
+  min-height: 128px;
+  align-items: flex-start;
+}
+
+header > * {
+  margin: 1rem;
+}
+
+.header-right {
+  display: flex;
+}
+
+.countdown {
+  width: 100px;
+  display: flex;
+  flex-direction: column;
+  text-align: end;
+}
+
+.countdown h2,
+.weather h2 {
+  font-weight: 500;
+  font-size: 3rem;
+}
+
+.weather h2 {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.weather {
+  margin-left: 50px;
+  width: 130px;
+  display: flex;
+  flex-direction: column;
+  text-align: right;
+}
+
+.weather-symbol {
+  font-size: 2rem;
+  margin-right: 0.5rem;
+}
+
+main {
+  flex-grow: 2;
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  gap: 10%;
+  justify-content: center;
+  /* border: 1px solid red; */
+}
+
+main > * {
+  /* border: 1px solid red; */
+}
+
+main h2 {
+  font-size: 3rem;
+  font-weight: 400;
+}
+
+/* Start of focus */
+
+.main-focus {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  font-size: 2rem;
+  opacity: 0;
+  transition: opacity 500ms ease;
+  line-height: 3rem;
+}
+
+.focus-form {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+
+.focus-label {
+  font-style: italic;
+  font-size: 1.5rem;
+}
+
+#focus-input {
+  background-color: hsl(0, 0%, 100%, 0);
+  border: 0;
+  outline: 0;
+  padding: 1rem;
+  text-shadow: 3px 3px 3px black;
+  transition: opacity 1000ms ease;
+  font-size: 2rem;
+}
+
+#focus-output {
+  font-size: 2.5rem;
+  font-weight: 500;
+}
+
+.focus-remove-button:hover {
+  display: block;
+}
+
+.focus-remove-button {
+  display: none;
+}
+
+#focus-output:hover ~ .btn {
+  display: block;
+}
+
+#focus-input::placeholder {
+  color: currentColor;
+  transition: opacity 500ms ease;
+  text-shadow: 3px 3px 3px black;
+  text-align: center;
+  font-size: 2rem;
+}
+
+#focus-input:focus {
+  box-shadow: -4px 3px 3px 2px hsl(0, 0%, 50%, 0.1);
+  transition: box-shadow 250ms ease;
+  background-color: hsl(0, 0%, 100%, 0.1);
+}
+
+#focus-input:focus::placeholder {
+  opacity: 0.5;
+  /* text-shadow: 3px 3px 3px black; */
+}
+
+/* End of focus */
+
+/* Start of random quotes */
+
+[data-add-quote-input]::placeholder {
+  text-align: center;
+}
+
+[data-add-quote-input] {
+  text-align: center;
+}
+
+.add-quote-form {
+}
+
+.add-or-remove-quote {
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-around;
+  gap: 1%;
+  display: none;
+}
+
+.add-or-remove-quote:hover {
+  display: flex;
+}
+
+.random-quotes {
+  opacity: 0;
+  transition: opacity 500ms ease;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+
+.quotes {
+  cursor: pointer;
+}
+
+.quote {
+  text-decoration: none;
+  list-style: none;
+  font-style: italic;
+  font-weight: 400;
+}
+
+.quotes:hover ~ .add-or-remove-quote {
+  display: flex;
+}
+
+.quote::before {
+  content: open-quote;
+}
+
+.quote::after {
+  content: close-quote;
+}
+
+.quote::before,
+.quote::after {
+  color: hsl(0, 0%, 100%, 0.1);
+  font-size: 2em;
+}
+
+/* End of random quotes */
+
+footer {
+  width: 100%;
+  bottom: 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  opacity: 0;
+  transition: opacity 500ms ease;
+  min-height: 128px;
+}
+
+footer p {
+  align-self: flex-end;
+  font-size: 0.6rem;
+  display: none;
+}
+
+footer div {
+  margin: 1rem;
+}
+
+.links h2,
+.todo-toggle {
+  font-weight: 600;
+}
+
+/* hero-name start */
+
+.hero-name {
+  align-self: center;
+  /* border: 1px solid red; */
+  padding: 2rem;
+  margin-bottom: -200px;
+  display: flex;
+  align-items: center;
+}
+
+.hero-name > * {
+  position: absolute;
+  left: 50%;
+  transform: translate(-50%);
+}
+
+[data-hero-name-form] {
+  position: absolute;
+  min-height: 250px;
+  top: 20%;
+  opacity: 1;
+  z-index: 999;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-direction: column;
+  font-size: 5rem;
+  padding: 1rem;
+}
+
+#name-input {
+  background-color: hsl(0, 0%, 100%, 0);
+  border: 0;
+  outline: 0;
+  font-size: 2.5rem;
+  padding: 1rem;
+  text-shadow: 3px 3px 3px black;
+  opacity: 0;
+  transition: opacity 1000ms ease;
+  text-align: center;
+}
+
+#name-input::placeholder {
+  color: currentColor;
+  transition: opacity 500ms ease;
+  font-size: 2.5rem;
+  text-shadow: 3px 3px 3px black;
+}
+
+#name-input:focus {
+  box-shadow: -4px 3px 3px 2px hsl(0, 0%, 50%, 0.1);
+  transition: box-shadow 250ms ease;
+  background-color: hsl(0, 0%, 100%, 0.1);
+}
+
+#name-input:focus::placeholder {
+  opacity: 0.5;
+  /* text-shadow: 3px 3px 3px black; */
+}
+
+/* hero-name end */
+
+/* date and time start */
+
+.datetime {
+  opacity: 0;
+  transition: opacity 500ms ease;
+  margin-top: 12rem;
+}
+
+.datetime:hover {
+}
+
+.date {
+  font-size: 20px;
+  letter-spacing: 0.35rem;
+}
+
+.date > * {
+  font-weight: 400;
+}
+
+.time {
+  margin-top: 1.5rem;
+  font-size: 8rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.time span {
+  font-weight: 600;
+  letter-spacing: 0.45rem;
+}
+
+#period {
+  margin-left: 1rem;
+  font-size: 2rem;
+}
+
+/* date and time end */
+
+/* Start of todo styles */
+
+.todo-container {
+  background-color: hsl(0, 0%, 50%, 0.3);
+  border-radius: 5px;
+  padding: 0.75rem;
+  position: absolute;
+  right: 0;
+  bottom: 50px;
+  transform: scale(1, 0);
+  transition: 250ms ease-in-out;
+  transform-origin: bottom;
+}
+
+.todo-container::after {
+  content: "";
+  position: absolute;
+  top: 100%;
+  right: 18px;
+  height: 0;
+  width: 0;
+  border-left: 10px solid transparent;
+  border-right: 10px solid transparent;
+  border-top: 10px solid hsl(0, 0%, 100%, 0.1);
+}
+
+.todo-container[data-visible="true"] {
+  transform: scale(1, 1);
+}
+
+.todo-lists {
+  font-size: 2rem;
+  font-weight: 500;
+  background-color: hsl(0, 0%, 100%, 0);
+  outline: none;
+  border: 0;
+  cursor: pointer;
+  transition: 250ms ease;
+}
+
+.todo-lists > * {
+  background-color: gray;
+  font-size: 1rem;
+  font-weight: 500;
+}
+
+.todo-lists:hover {
+  background-color: hsl(0, 0%, 100%, 0.2);
+}
+
+.todo-list-body {
+  display: flex;
+  justify-content: space-between;
+}
+
+.btn {
+  background-color: transparent;
+  border: 0;
+  cursor: pointer;
+  font-size: 1rem;
+  transition: opacity 250ms ease;
+}
+
+.btn:hover {
+  opacity: 0.7;
+}
+
+.btn.create {
+  font-weight: 500;
+  font-size: 1.2rem;
+  margin-right: 0.3rem;
+}
+
+form {
+  display: flex;
+}
+
+.new {
+  background-color: transparent;
+  border: 1px solid hsl(0, 0%, 100%, 0);
+  outline: none;
+  transition: background-color 500ms ease;
+  order: 2;
+  cursor: pointer;
+  transition: border-bottom 500ms ease;
+}
+
+.new::placeholder {
+  color: hsl(0, 0%, 100%, 0.9);
+}
+
+.new:focus {
+  background-color: hsl(0, 0%, 100%, 0.1);
+  border-bottom: 1px solid #fff;
+}
+
+.new:focus::placeholder {
+  opacity: 0.4;
+}
+
+.new:hover {
+  border-bottom: 1px solid #fff;
+}
+
+.todo-tasks {
+  margin-left: 0;
+}
+
+.task label {
+  display: inline-flex;
+  align-items: center;
+  position: relative;
+}
+
+.task {
+  position: relative;
+}
+
+.task::after {
+  content: "";
+  position: absolute;
+  right: 0;
+  left: 0;
+  bottom: -50%;
+  height: 1px;
+  background-color: currentColor;
+  opacity: 0.5;
+}
+
+.task label::after {
+  content: "";
+  position: absolute;
+  left: 1.5em;
+  right: 0;
+  height: 1px;
+  background-color: currentColor;
+  transform: scaleX(0);
+  transition: transform 200ms ease;
+  transform-origin: right;
+}
+
+.task input:checked + label::after {
+  transform: scaleX(1);
+  transition: transform 500ms ease;
+  transform-origin: left;
+}
+
+[type="checkbox"] {
+  display: none;
+}
+
+.custom-checkbox {
+  display: inline-block;
+  width: 0.9rem;
+  height: 0.9rem;
+  cursor: pointer;
+  border: 1px solid currentColor;
+  margin-right: 0.5em;
+  border-radius: 3px;
+  transition: 250ms ease;
+}
+
+.task:hover .custom-checkbox {
+  background-color: currentColor;
+}
+
+.task input:checked + label .custom-checkbox {
+  background: linear-gradient(
+    135deg,
+    hsl(0, 0%, 10%, 1),
+    hsl(0, 0%, 100%, 0.5)
+  );
+}
+
+.task input:checked + label .custom-checkbox::after {
+  display: block;
+}
+
+.custom-checkbox::after {
+  content: "";
+  position: absolute;
+  left: 5px;
+  width: 5px;
+  height: 10px;
+  border: solid white;
+  border-width: 0 3px 3px 0;
+  transform: rotate(45deg);
+  display: none;
+}
+
+.task input:checked + label {
+  opacity: 0.5;
+}
+
+.todo-deletes {
+  display: flex;
+  justify-content: space-around;
+}
+
+.todo-deletes > * {
+  margin-right: 10px;
+}
+
+.task,
+.task label {
+  cursor: pointer;
+}
+
+/* End of todo styles */
+
+.colon {
+  font-size: 5rem;
+  font-weight: 100;
+}
+
+/* Start of Links */
+
+.link-container[data-link-visible="true"] {
+  transform: scale(1, 1);
+}
+
+.link-container {
+  background-color: hsl(0, 0%, 50%, 0.3);
+  border-radius: 5px;
+  padding: 0.75rem;
+  position: absolute;
+  right: left;
+  top: 60px;
+  transform: scale(1, 0);
+  transition: 250ms ease-in-out;
+  transform-origin: top;
+  display: flex;
+  flex-direction: column;
+}
+
+.link-container::before {
+  content: "";
+  position: absolute;
+  bottom: 100%;
+  left: 25px;
+  height: 0;
+  width: 0;
+  border-left: 10px solid transparent;
+  border-right: 10px solid transparent;
+  border-bottom: 10px solid hsl(0, 0%, 50%, 0.3);
+}
+
+.link-container > * {
+  margin: 0.5rem;
+}
+
+.links {
+  list-style: none;
+}
+
+.link {
+  margin: 1rem;
+}
+
+.link-url {
+  text-decoration: none;
+  font-weight: 900;
+}
+
+/* End of Links */
+
+@media screen and (max-width: 800px) {
+  .links h2 {
+    font-size: 5vw;
+  }
+
+  [data-hero-name-form] {
+    font-size: 13vw;
+  }
+
+  #name-input {
+    font-size: 5vw;
+  }
+
+  #name-input::placeholder {
+    font-size: 5vw;
+  }
+
+  .countdown {
+    font-size: 4vw;
+  }
+  .countdown h2 {
+    font-size: 8vw;
+  }
+
+  .weather {
+    margin-left: 1px;
+    width: 130px;
+  }
+
+  .weather p {
+    font-size: 4vw;
+  }
+  .weather h2 {
+    font-size: 8vw;
+  }
+  .weather-symbol {
+    font-size: 6vw;
+  }
+
+  .todo-container {
+    max-width: 375px;
+  }
+
+  main h2 {
+    font-size: 5vw;
+  }
+
+  .date span {
+    font-size: 5vw;
+  }
+
+  .time span {
+    font-size: 15vw;
+  }
+
+  #seconds {
+    display: none;
+  }
+
+  .colon:nth-child(4) {
+    display: none;
+  }
+
+  .focus-label {
+    font-size: 4vw;
+  }
+
+  #focus-input {
+    font-size: 4vw;
+  }
+  #focus-input::placeholder {
+    font-size: 4vw;
+  }
+  #focus-output {
+    font-size: 5vw;
+  }
+}

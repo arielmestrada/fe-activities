@@ -1,0 +1,342 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="styles.css" />
+    <script src="index.js" defer></script>
+    <script
+      src="https://kit.fontawesome.com/078a6194a6.js"
+      crossorigin="anonymous"
+    ></script>
+    <title>Banking App</title>
+  </head>
+  <body>
+    <header class="header">
+      <div class="company">
+        <img class="company-logo" src="images/logo-01.png" />
+        <h1 class="company-name">V.K. Bank</h1>
+      </div>
+    </header>
+
+    <main class="main">
+      <ul class="left menu">
+        <li>
+          <button class="btn menu-accounts-button">Accounts</button>
+        </li>
+        <li>
+          <button class="btn menu-create-account-button">Create Account</button>
+        </li>
+        <li>
+          <button class="btn menu-deposit-button">Deposit</button>
+        </li>
+        <li>
+          <button class="btn menu-withdraw-button">Withdraw</button>
+        </li>
+        <li>
+          <button class="btn menu-transfer-button">Transfer</button>
+        </li>
+        <li>
+          <button class="btn menu-budget-app-button">Budget App</button>
+        </li>
+      </ul>
+
+      <section class="right-container">
+        <section class="right create-account">
+          <h2>Create Account</h2>
+          <form id="create-account-form" action="">
+            <label id="last-name-label" for="last-name-input">Last Name:</label>
+            <input id="last-name-input" type="text" required />
+            <label id="first-name-label" for="first-name-input"
+              >First Name:</label
+            >
+            <input id="first-name-input" type="text" required />
+            <label id="middle-name-label" for="middle-name-input"
+              >Middle Name:</label
+            >
+            <input id="middle-name-input" type="text" required />
+            <label id="suffix-label" for="suffix-input">Suffix:</label>
+            <input id="suffix-input" type="text" />
+            <hr />
+            <label id="email-address-label" for="email-address-input"
+              >Email Address:</label
+            >
+            <input id="email-address-input" type="email" required />
+            <label id="password-label" for="password-input">Password:</label>
+            <input id="password-input" type="password" required />
+            <hr />
+            <label id="balance-label" for="balance-input">Balance:</label>
+            <input id="balance-input" type="number" min="0" />
+            <!-- <label for="create-account-submit">Submit Label</label> -->
+            <input class="form-btn" id="create-account-submit" type="submit" />
+          </form>
+        </section>
+
+        <section class="right deposit-section">
+          <h2>Deposit</h2>
+          <form id="deposit-form" action="">
+            <label for="deposit-account-number-input">Account Number:</label>
+            <input id="deposit-account-number-input" type="text" />
+            <label for="deposit-email-address-input">Email Address:</label>
+            <input id="deposit-email-address-input" type="email" />
+            <hr />
+            <label for="deposit-last-name-input">Last Name:</label>
+            <input id="deposit-last-name-input" type="text" />
+            <label for="deposit-first-name-input">First Name:</label>
+            <input id="deposit-first-name-input" type="text" />
+            <label for="deposit-middle-name-input">Middle Name:</label>
+            <input id="deposit-middle-name-input" type="text" />
+            <label for="deposit-suffix-input">Suffix:</label>
+            <input id="deposit-suffix-input" type="text" />
+            <hr />
+            <label for="deposit-amount-input">Deposit Amount:</label>
+            <input id="deposit-amount-input" type="number" min="0" />
+            <input class="form-btn submit-button" type="submit" />
+          </form>
+        </section>
+
+        <section class="right withdraw-section">
+          <h2>Withdraw</h2>
+          <form id="withdraw-form" action="">
+            <label for="withdraw-account-number-input">Account Number:</label>
+            <input id="withdraw-account-number-input" type="text" />
+            <label for="withdraw-email-address-input">Email Address:</label>
+            <input id="withdraw-email-address-input" type="email" />
+            <hr />
+            <label for="withdraw-last-name-input">Last Name:</label>
+            <input id="withdraw-last-name-input" type="text" />
+            <label for="withdraw-first-name-input">First Name:</label>
+            <input id="withdraw-first-name-input" type="text" />
+            <label for="withdraw-middle-name-input">Middle Name:</label>
+            <input id="withdraw-middle-name-input" type="text" />
+            <label for="withdraw-suffix-input">Suffix:</label>
+            <input id="withdraw-suffix-input" type="text" />
+            <hr />
+            <label for="withdraw-amount-input">Withdraw Amount:</label>
+            <input id="withdraw-amount-input" type="number" min="0" />
+            <input class="form-btn submit-button" type="submit" />
+          </form>
+        </section>
+
+        <section class="right transfer-section">
+          <h2>Transfer</h2>
+          <form id="transfer-form" action="">
+            <div class="sender-div">
+              <h3>Sender's Details</h3>
+              <div class="sender-account-number-div">
+                <label for="sender-account-number-input">Account Number:</label>
+                <input id="sender-account-number-input" type="text" />
+              </div>
+              <div class="sender-email-div">
+                <label for="sender-email-address-input">Email Address:</label>
+                <input id="sender-email-address-input" type="email" />
+              </div>
+              <div>
+                <label for="sender-last-name-input">Last Name:</label>
+                <input id="sender-last-name-input" type="text" />
+              </div>
+              <div>
+                <label for="sender-first-name-input">First Name:</label>
+                <input id="sender-first-name-input" type="text" />
+              </div>
+              <div>
+                <label for="sender-middle-name-input">Middle Name:</label>
+                <input id="sender-middle-name-input" type="text" />
+              </div>
+              <div>
+                <label for="sender-suffix-input">Suffix:</label>
+                <input id="sender-suffix-input" type="text" />
+              </div>
+
+              <div class="sender-amount-div">
+                <label for="sender-amount-input">Transfer Amount:</label>
+                <input id="sender-amount-input" type="number" min="0" />
+              </div>
+              <hr />
+            </div>
+            <hr class="transfer-hr" />
+            <div class="receiver-div">
+              <h3>Receiver's Details</h3>
+              <div class="receiver-account-number-div">
+                <label for="receiver-account-number-input"
+                  >Account Number:</label
+                >
+                <input id="receiver-account-number-input" type="text" />
+              </div>
+              <div class="receiver-email-div">
+                <label for="receiver-email-address-input">Email Address:</label>
+                <input id="receiver-email-address-input" type="email" />
+              </div>
+              <div>
+                <label for="receiver-last-name-input">Last Name:</label>
+                <input id="receiver-last-name-input" type="text" />
+              </div>
+              <div>
+                <label for="receiver-first-name-input">First Name:</label>
+                <input id="receiver-first-name-input" type="text" />
+              </div>
+              <div>
+                <label for="receiver-middle-name-input">Middle Name:</label>
+                <input id="receiver-middle-name-input" type="text" />
+              </div>
+              <div>
+                <label for="receiver-suffix-input">Suffix:</label>
+                <input id="receiver-suffix-input" type="text" />
+              </div>
+
+              <hr />
+            </div>
+
+            <input class="form-btn submit-button" type="submit" />
+          </form>
+        </section>
+
+        <section class="right full-account-details">
+          <div class="basic-details">
+            <div class="account-number">
+              <h3>Account Number:</h3>
+              <p></p>
+            </div>
+            <div class="complete-name">
+              <h3>Complete Name:</h3>
+              <p></p>
+            </div>
+            <div class="last-name">
+              <h3>Last Name:</h3>
+              <p></p>
+            </div>
+            <div class="first-name">
+              <h3>First Name:</h3>
+              <p></p>
+            </div>
+            <div class="middle-name">
+              <h3>Middle Name:</h3>
+              <p></p>
+            </div>
+            <div class="suffix">
+              <h3>Suffix:</h3>
+              <p></p>
+            </div>
+            <div class="balance">
+              <h3>Balance:</h3>
+              <p></p>
+            </div>
+            <div class="email-address">
+              <h3>Email Address:</h3>
+              <p></p>
+            </div>
+            <div class="password">
+              <h3>Password:</h3>
+              <p></p>
+            </div>
+          </div>
+          <form class="quick-transaction" action="">
+            <button class="form-btn qt-deposit-button">Deposit</button>
+            <button class="form-btn qt-withdraw-button">Withdraw</button>
+            <button class="form-btn qt-transfer-button">Transfer</button>
+            <div class="qt-inputs">
+              <label for="qt-account-number-input"
+                >Account Number (for transfer):</label
+              >
+              <input id="qt-account-number-input" type="text" />
+              <label for="qt-amount-input">Amount:</label>
+              <input id="qt-amount-input" type="number" min="0" />
+            </div>
+          </form>
+          <section class="budget-app">
+            <table class="table-account-history">
+              <thead>
+                <tr>
+                  <th scope="col">Date</th>
+                  <th scope="col">Description</th>
+                  <th scope="col">Amount</th>
+                  <th scope="col">Balance</th>
+                  <th scope="col">Actions</th>
+                </tr>
+              </thead>
+              <tbody></tbody>
+            </table>
+          </section>
+          <button class="btn add-expense-button">Add Expense</button>
+        </section>
+
+        <section class="right accounts">
+          <div class="accounts-filter">
+            <input id="filter-input" type="text" placeholder="Filter Table" />
+          </div>
+          <div class="account-list-container">
+            <table class="account-list-table">
+              <thead>
+                <tr>
+                  <th scope="col">Actions</th>
+                  <th scope="col">Account Number</th>
+                  <th scope="col">Last Name</th>
+                  <th scope="col">First Name</th>
+                  <th scope="col">Middle Name</th>
+                  <th scope="col">Suffix</th>
+                  <th scope="col">Email Address</th>
+                  <th scope="col">Password</th>
+                  <th scope="col">Balance</th>
+                </tr>
+              </thead>
+              <tbody id="account-list-tbody"></tbody>
+            </table>
+          </div>
+        </section>
+      </section>
+    </main>
+
+    <div class="login-div">
+      <form class="login-form">
+        <label for="login-email-input">Email Address</label>
+        <input id="login-email-input" type="text"/>
+        <label for="login-password-input">Password:</label>
+        <input id="login-password-input" type="password" />
+        <p style="font-size: .7rem;"><i>Admin Account: Use "admin" as email address and password.</i></p>
+        <input class="form-btn" id="login-submit-input" type="submit" />
+      </form>
+      <p>
+        Don't have an account?
+        <button class="signup-button">Sign-up</button> here
+      </p>
+      <button class="form-btn" id="initial-accounts">
+        Load Starter Accounts
+      </button>
+    </div>
+
+    <template id="table-row-template">
+      <tr class="account-detail" id="">
+        <td class="td-actions">
+          <button class="delete-row-button">
+            <i class="fa-solid fa-trash-can"></i>
+          </button>
+          <button class="access-button">
+            <i class="fa-solid fa-arrow-right-to-bracket"></i>
+          </button>
+        </td>
+        <td class="td-account-number"></td>
+        <td class="td-last-name"></td>
+        <td class="td-first-name"></td>
+        <td class="td-middle-name"></td>
+        <td class="td-suffix"></td>
+        <td class="td-email-address"></td>
+        <td class="td-password"></td>
+        <td class="td-balance"></td>
+      </tr>
+    </template>
+
+    <template id="budget-app-tr-template">
+      <tr class="activity-detail" id="">
+        <td class="budget-app-date"></td>
+        <td class="budget-app-description"></td>
+        <td class="budget-app-amount"></td>
+        <td class="budget-app-balance"></td>
+        <td class="budget-app-action">
+          <button class="form-btn delete-expense-button">Delete</button>
+          <!-- <button class="edit-expense-button">Edit</button> -->
+        </td>
+      </tr>
+    </template>
+  </body>
+</html>
